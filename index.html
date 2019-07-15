@@ -155,12 +155,39 @@
     <article id="post-hexo搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/15/hexo搭建个人博客/">搭建个人博客详细步骤</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/15/hexo搭建个人博客/" class="archive-article-date">
+  	<time datetime="2019-07-15T02:54:57.560Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
+</a>
+		
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="搭建个人博客详细步骤"><a href="#搭建个人博客详细步骤" class="headerlink" title="搭建个人博客详细步骤"></a>搭建个人博客详细步骤</h1>
-        
-          <a class="article-more-a" href="/2019/07/14/hexo搭建个人博客/#more">more >></a>
-        
+        <a id="more"></a> 
+<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><h3 id="在window下搭建和Linux搭建都可以"><a href="#在window下搭建和Linux搭建都可以" class="headerlink" title="在window下搭建和Linux搭建都可以"></a>在window下搭建和Linux搭建都可以</h3><h3 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h3><p>首先需要安装node.js可以去官网下载安装 <a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a> 这里我已经安装过了就不赘述了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v //查看node的版本</span><br><span class="line">npm -v  //查看npm的版本</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20190714145811844.png" alt="在这里插入图片描述"><br>接下来搭建hexo博客国内npm可能会比较慢建议切换成国内的taobao镜像我的已经切换过来了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1.得到原本的镜像地址</span><br><span class="line"></span><br><span class="line">**npm get registry** </span><br><span class="line"></span><br><span class="line">&gt; https://registry.npmjs.org/</span><br><span class="line"></span><br><span class="line">设成淘宝的</span><br><span class="line"></span><br><span class="line">npm config set registry http://registry.npm.taobao.org/</span><br><span class="line"> </span><br><span class="line">2.换成原来的</span><br><span class="line"></span><br><span class="line">npm config set registry https://registry.npmjs.org/</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20190714150410315.png" alt="在这里插入图片描述"><br>建议先安装git这里就不多演示了没安装的可以自己看教程安装<br>window下打开git bash 然后进入命令行<br><img src="https://img-blog.csdnimg.cn/20190714145141146.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDAzODYw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>在电脑上新建一个文件夹blog之后都是基于这个文件夹操作的这里我放在d盘可以任意<br><img src="https://img-blog.csdnimg.cn/20190714145412291.png" alt="在这里插入图片描述"></p>
+<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><p>执行命令 <strong>npm install -g hexo-cli</strong> -g全局安装<br>需要等几分钟如果安装成功之后查看如下说明安装成功<br><img src="https://img-blog.csdnimg.cn/20190714150807925.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDAzODYw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h2><p>接下来我们去到刚才新建的blog文件夹执行命令<br><strong>hexo init</strong>再此过程中需要一点时间别急慢慢来<br><img src="https://img-blog.csdnimg.cn/20190714151032665.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDAzODYw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>到这里安装成功了是不是很简单<br>最后启动我的博客 hexo -s 理解为 hexo -server或者 hexo -start<br><img src="https://img-blog.csdnimg.cn/20190714151309887.png" alt="在这里插入图片描述"><br>最后启动成功可以看到一个日志说hexo已经在<a href="http://localhost:4000" target="_blank" rel="noopener">localhost:4000</a>端口启动了在浏览器中输入即可看到<br><img src="https://img-blog.csdnimg.cn/2019071415215833.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDAzODYw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h2><p>上面搭建的博客只适合测试在本地访问下面我们要它部署到远程的公网上去如果你有公网ip最后没有也没有关系使用github也可以进行部署我们选择部署到github上首先在github上新创建一个仓库相信玩过git都会就不赘述了特别注意的是仓库的名称一定要是这个结构登录git的用户名.github.io<br>例如<strong>lisi666.github.io</strong> 之后我们在安装上传到git的命令如下<br><strong>npm install –save hexo-deployer-git</strong>安装过程有警告没关系不用管需要一点时间<br>安装成功之后进入blog目录这里需要修改一下配置文件<br><img src="https://img-blog.csdnimg.cn/20190714153842239.png" alt="在这里插入图片描述"><br>修改一下——config.yml文件直接使用vim 命令编辑<br><strong>vim _config.yml</strong><br><img src="https://img-blog.csdnimg.cn/20190714154141152.png" alt="在这里插入图片描述"><br>修改这三给参数即可 repo:填写仓库地址即可 branch:指定分支</p>
+<h2 id="第六步"><a href="#第六步" class="headerlink" title="第六步"></a>第六步</h2><p>最后执行 <strong>hexo d</strong>命令上传到github上过程中需要输入用户名和密码<br><img src="https://img-blog.csdnimg.cn/20190714154501258.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDAzODYw,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>出现这个100%说明上传成功接下来我们可以直接在地址栏上输入<a href="https://wubingit.github.io/" target="_blank" rel="noopener">我的博客地址</a>一个博客就搭建成功了</p>
+<h1 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h1><p>如果你看到的和我的页面不一致那是因为我切换了主题 切换主题也是非常简单的 git clone <strong><a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</strong><br>我用的主题是github上的自已喜欢哪一种上github自取<br>最后会在文件夹中产生<br><img src="https://img-blog.csdnimg.cn/20190714155412918.png" alt="在这里插入图片描述"><br>两个文件第一个hexo默认的yilia是我们自己定义的<br>要想自定义主题设置还需要配置 vim _config.yml<br><img src="https://img-blog.csdnimg.cn/20190714155649245.png" alt="在这里插入图片描述"><br>执行命令<strong>hexo clean</strong><br>本地启动<strong>hexo s</strong><br>推送到远程git <strong>hexo d</strong><br>之后就可以访问了</p>
+
       
 
       
@@ -172,7 +199,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/14/hexo搭建个人博客/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/15/hexo搭建个人博客/">展开全文 >></a>
         </p>
       
 
@@ -205,12 +232,37 @@
     <article id="post-链表逆序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/15/链表逆序/">链表逆序</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/15/链表逆序/" class="archive-article-date">
+  	<time datetime="2019-07-15T02:53:49.106Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
+</a>
+		
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="链表逆序"><a href="#链表逆序" class="headerlink" title="链表逆序"></a>链表逆序</h1><h1 id="在很多大厂的面试中链表也是考察频率比较高的一种数据结构下面就链表逆序给出由Java语言解题的思路和代码"><a href="#在很多大厂的面试中链表也是考察频率比较高的一种数据结构下面就链表逆序给出由Java语言解题的思路和代码" class="headerlink" title="在很多大厂的面试中链表也是考察频率比较高的一种数据结构下面就链表逆序给出由Java语言解题的思路和代码"></a>在很多大厂的面试中链表也是考察频率比较高的一种数据结构下面就链表逆序给出由Java语言解题的思路和代码</h1>
-        
-          <a class="article-more-a" href="/2019/07/14/链表逆序/#more">more >></a>
-        
+        <a id="more"></a>
+<h1 id="在很多大厂的面试中链表也是考察频率比较高的一种数据结构下面就链表逆序给出由Java语言解题的思路和代码"><a href="#在很多大厂的面试中链表也是考察频率比较高的一种数据结构下面就链表逆序给出由Java语言解题的思路和代码" class="headerlink" title="在很多大厂的面试中链表也是考察频率比较高的一种数据结构下面就链表逆序给出由Java语言解题的思路和代码"></a>在很多大厂的面试中链表也是考察频率比较高的一种数据结构下面就链表逆序给出由Java语言解题的思路和代码</h1><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>例如一个链表：head–&gt;0–&gt;1-&gt;2–&gt;3–&gt;4–&gt;5<br>逆序为：head-&gt;5–&gt;4–&gt;3–&gt;2–&gt;1–0<br>我们只需要定义两个节点 一个cur指向当前需要逆向的节点一个next指向后一个需要逆向的节点即可<br>然后把需要逆向的节点插入到头节点的下一个节点 head.next=cur即可是不是思路很简单而且时间复杂度O(n)不需要额外的开辟内存空间;</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>下面就看代码实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//节点引用类</span><br><span class="line">public class LNode &#123;</span><br><span class="line">    int data;</span><br><span class="line">    LNode next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以先初始化一个链表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">LNode head=new LNode();</span><br><span class="line"> head.next=null;</span><br><span class="line"> LNode temp=null;</span><br><span class="line"> LNode cur=head;</span><br><span class="line"> for (int i = 0; i &lt;8 ; i++) &#123;</span><br><span class="line">     temp=new LNode();</span><br><span class="line">     temp.data=i;</span><br><span class="line">     temp.next=null;</span><br><span class="line">     cur.next=temp;</span><br><span class="line">     cur=temp;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后我们详细的看看翻转的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public static void ReverseLink(LNode head)&#123;</span><br><span class="line">		//先判断链表是否为空 一个好的习惯</span><br><span class="line">        if(head==null || head.next==null) return;</span><br><span class="line">        LNode cur=null;</span><br><span class="line">        LNode next=null;</span><br><span class="line">        //把当前节点指向逆序的第一个节点</span><br><span class="line">        cur=head.next.next;</span><br><span class="line">        //把头节点置为null</span><br><span class="line">        head.next.next=null;</span><br><span class="line">        while (cur!=null)&#123;</span><br><span class="line">            next=cur.next;</span><br><span class="line">            //断开当前节点和后继节点的引用 即cur为一个节点 之后把头节点的后继指向当前节点即可 直到当前节点不为空</span><br><span class="line">            cur.next=head.next;</span><br><span class="line">            head.next=cur;</span><br><span class="line">            cur=next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p> 这就是一个简单的链表翻转  </p>
+
       
 
       
@@ -222,7 +274,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/14/链表逆序/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/15/链表逆序/">展开全文 >></a>
         </p>
       
 
