@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Helloworld</title>
+  <title>无序链表删除重复项 | Helloworld</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: 无序链表删除重复项给定一个没有排序的链表，删除重复项，并保留原顺序">
+  <meta name="description" content="给定一个没有排序的链表，删除重复项，并保留原顺序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Helloworld">
+<meta property="og:title" content="无序链表删除重复项">
 <meta property="og:url" content="http://yoursite.com/2019/07/16/无序链表删除重复项/index.html">
 <meta property="og:site_name" content="Helloworld">
-<meta property="og:description" content="title: 无序链表删除重复项给定一个没有排序的链表，删除重复项，并保留原顺序">
+<meta property="og:description" content="给定一个没有排序的链表，删除重复项，并保留原顺序">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-16T11:39:22.111Z">
+<meta property="og:updated_time" content="2019-07-16T12:05:05.530Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Helloworld">
-<meta name="twitter:description" content="title: 无序链表删除重复项给定一个没有排序的链表，删除重复项，并保留原顺序">
+<meta name="twitter:title" content="无序链表删除重复项">
+<meta name="twitter:description" content="给定一个没有排序的链表，删除重复项，并保留原顺序">
   
     <link rel="alternative" href="/atom.xml" title="Helloworld" type="application/atom+xml">
   
@@ -157,9 +157,29 @@
             <article id="post-无序链表删除重复项" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      无序链表删除重复项
+    </h1>
+  
+
+        
+        <a href="/2019/07/16/无序链表删除重复项/" class="archive-article-date">
+  	<time datetime="2019-07-16T12:03:45.565Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
+</a>
+		
+		<span class="archive-article-date">
+			阅读量 <span id="busuanzi_value_page_pv"></span>
+		</span>
+
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="title-无序链表删除重复项"><a href="#title-无序链表删除重复项" class="headerlink" title="title: 无序链表删除重复项"></a>title: 无序链表删除重复项</h2><h1 id="给定一个没有排序的链表，删除重复项，并保留原顺序"><a href="#给定一个没有排序的链表，删除重复项，并保留原顺序" class="headerlink" title="给定一个没有排序的链表，删除重复项，并保留原顺序"></a>给定一个没有排序的链表，删除重复项，并保留原顺序</h1><a id="more"></a>
+        <h1 id="给定一个没有排序的链表，删除重复项，并保留原顺序"><a href="#给定一个没有排序的链表，删除重复项，并保留原顺序" class="headerlink" title="给定一个没有排序的链表，删除重复项，并保留原顺序"></a>给定一个没有排序的链表，删除重复项，并保留原顺序</h1><a id="more"></a>
 
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>例如一个链表：head–&gt;0–&gt;1-&gt;2–&gt;3–&gt;4–&gt;5<br>逆序为：head-&gt;5–&gt;4–&gt;3–&gt;2–&gt;1–0<br>三个变量 1.<strong>outerCur外层循环指向头节点的下一个节点</strong><br>2.<strong>innerCur内层循环用来遍历outerCur后面的节点</strong></p>
 <ol start="3">
@@ -176,7 +196,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public static void  RemoveDupNum(LNode head)&#123;</span><br><span class="line">       //思路</span><br><span class="line">       /**三个变量 1.outerCur外层循环指向头节点的下一个节点 innerCur内层循环用来遍历outerCur后面的节点 innerPre innerCur的前驱节点</span><br><span class="line">        * 双重for循环 第一重for循环令cur指向头节点的下一个节点</span><br><span class="line">        * 第二重for循环令inner指向cur的下一个节点</span><br><span class="line">        * if两个节点的值相同的话</span><br><span class="line">        */</span><br><span class="line">       if(head==null || head.next==null) return;</span><br><span class="line">       LNode outerCur=head.next;</span><br><span class="line">       LNode innerCur=null;</span><br><span class="line">       LNode innerPre=null;</span><br><span class="line">       for (; outerCur !=null ; outerCur=outerCur.next) &#123;</span><br><span class="line">           for ( innerCur=outerCur.next,innerPre=outerCur; innerCur!=null;) &#123;</span><br><span class="line">               if(outerCur.data==innerCur.data)&#123;</span><br><span class="line">                   innerPre.next=innerCur.next;</span><br><span class="line">                   innerCur=innerCur.next;</span><br><span class="line">               &#125;else &#123;</span><br><span class="line">                   innerPre=innerCur;</span><br><span class="line">                   innerCur=innerCur.next;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
 <p> 这就是一个简单的无序链表删除重复项</p>
-<h2 id="讲到这里随便把有序链表的也说完这里就直接给代码了不废话了"><a href="#讲到这里随便把有序链表的也说完这里就直接给代码了不废话了" class="headerlink" title="讲到这里随便把有序链表的也说完这里就直接给代码了不废话了"></a>讲到这里随便把有序链表的也说完这里就直接给代码了不废话了</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">  * 给定一个有序的链表，删除重复项，并保留原顺序</span><br><span class="line">  * 思路：cur指向链表的第一个节点 if(cur.data==cur.next.data) cur.next=cur.next.next;否则 cur=cur.next</span><br><span class="line">  * @param head</span><br><span class="line">  */</span><br><span class="line"> public static void  RemoveDupNum1(LNode head)&#123;</span><br><span class="line">     if (head==null&amp;&amp;head.next==null)return;</span><br><span class="line">     LNode cur=head;</span><br><span class="line">     while (cur!=null)&#123;</span><br><span class="line">         if (cur.next==null)&#123;</span><br><span class="line">             break;</span><br><span class="line">         &#125;</span><br><span class="line">         if (cur.data==cur.next.data)&#123;</span><br><span class="line">             cur.next=cur.next.next;</span><br><span class="line">         &#125;else &#123;</span><br><span class="line">             cur=cur.next;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="讲到这里随便把有序链表的也说完这里就直接给代码了不废话了"><a href="#讲到这里随便把有序链表的也说完这里就直接给代码了不废话了" class="headerlink" title="讲到这里随便把有序链表的也说完这里就直接给代码了不废话了"></a>讲到这里随便把有序链表的也说完这里就直接给代码了不废话了</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">  * 给定一个有序的链表，删除重复项，并保留原顺序</span><br><span class="line">  * 思路：cur指向链表的第一个节点 if(cur.data==cur.next.data) cur.next=cur.next.next;否则 cur=cur.next</span><br><span class="line">  * @param head</span><br><span class="line">  */</span><br><span class="line"> public static void  RemoveDupNum1(LNode head)&#123;</span><br><span class="line">     if (head==null&amp;&amp;head.next==null)return;</span><br><span class="line">     LNode cur=head;</span><br><span class="line">     while (cur!=null)&#123;</span><br><span class="line">         if (cur.next==null)&#123;</span><br><span class="line">             break;</span><br><span class="line">         &#125;</span><br><span class="line">         if (cur.data==cur.next.data)&#123;</span><br><span class="line">             cur.next=cur.next.next;</span><br><span class="line">         &#125;else &#123;</span><br><span class="line">             cur=cur.next;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
 <p> 如果有什么问题欢迎骚扰<br> qq:1947832562<br> <a href="https://wubingit.github.io/" target="_blank" rel="noopener">个人博客:</a></p>
 
@@ -311,7 +331,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-无序链表删除重复项"><span class="toc-number">1.</span> <span class="toc-text">title: 无序链表删除重复项</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#给定一个没有排序的链表，删除重复项，并保留原顺序"><span class="toc-number"></span> <span class="toc-text">给定一个没有排序的链表，删除重复项，并保留原顺序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number"></span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#话不多说直接上代码"><span class="toc-number">1.</span> <span class="toc-text">话不多说直接上代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#讲到这里随便把有序链表的也说完这里就直接给代码了不废话了"><span class="toc-number">3.</span> <span class="toc-text">讲到这里随便把有序链表的也说完这里就直接给代码了不废话了</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#给定一个没有排序的链表，删除重复项，并保留原顺序"><span class="toc-number">1.</span> <span class="toc-text">给定一个没有排序的链表，删除重复项，并保留原顺序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#话不多说直接上代码"><span class="toc-number">2.1.</span> <span class="toc-text">话不多说直接上代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#讲到这里随便把有序链表的也说完这里就直接给代码了不废话了"><span class="toc-number">2.3.</span> <span class="toc-text">讲到这里随便把有序链表的也说完这里就直接给代码了不废话了</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
