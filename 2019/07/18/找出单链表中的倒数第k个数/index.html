@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | Helloworld</title>
+  <title>Helloworld</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="title: 找出单链表中的倒数第k个数">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Helloworld">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/07/18/找出单链表中的倒数第k个数/index.html">
 <meta property="og:site_name" content="Helloworld">
+<meta property="og:description" content="title: 找出单链表中的倒数第k个数">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="c:%5CUsers%5CAdministrator%5CDesktop%5C%E5%9B%BE%E7%89%87%5CTIM%E6%88%AA%E5%9B%BE20190718194036.png">
+<meta property="og:updated_time" content="2019-07-18T11:42:56.423Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Helloworld">
+<meta name="twitter:description" content="title: 找出单链表中的倒数第k个数">
+<meta name="twitter:image" content="c:%5CUsers%5CAdministrator%5CDesktop%5C%E5%9B%BE%E7%89%87%5CTIM%E6%88%AA%E5%9B%BE20190718194036.png">
   
     <link rel="alternative" href="/atom.xml" title="Helloworld" type="application/atom+xml">
   
@@ -150,178 +156,180 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-找出单链表中的倒数第k个数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="title-找出单链表中的倒数第k个数"><a href="#title-找出单链表中的倒数第k个数" class="headerlink" title="title: 找出单链表中的倒数第k个数"></a>title: 找出单链表中的倒数第k个数</h2><a id="more"></a> 
+
+<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p>找出单链表中的倒数第k个数，如给定单链表：<strong>0–&gt;1-&gt;2–&gt;3–&gt;4–&gt;5-&gt;6-&gt;7</strong>,则单链表中的倒数第3个数为5.</p>
+<h1 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h1><h2 id="思路1：二次遍历求解"><a href="#思路1：二次遍历求解" class="headerlink" title="思路1：二次遍历求解"></a>思路1：二次遍历求解</h2><p>第一次遍历链表求出链表的总长度，第二次遍历到n-k求出链表的的倒数第k个元素。</p>
+<h1 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> LNode <span class="title">findLastkNode</span><span class="params">(LNode head,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="comment">//求出链表的长度定义一个变量</span></span><br><span class="line">    <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">    LNode cur=head.next;</span><br><span class="line">    LNode last = head.next;</span><br><span class="line">    <span class="keyword">while</span> (cur!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        count++;</span><br><span class="line">        cur=cur.next;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;count -k ; i++) &#123;</span><br><span class="line">        last=last.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> last;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="思路1：快慢指针法"><a href="#思路1：快慢指针法" class="headerlink" title="思路1：快慢指针法"></a>思路1：快慢指针法</h2><p>定义两个指针，第一个slow指向头节点，第二个指针指向fast比slow快k的节点，一直遍历直到fast.next=null时即求出slow.</p>
+<h1 id="代码实现：-1"><a href="#代码实现：-1" class="headerlink" title="代码实现："></a>代码实现：</h1><p>我就不废话了直接看代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> LNode <span class="title">findLastkNode</span><span class="params">(LNode head,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (head==<span class="keyword">null</span>||head.next==<span class="keyword">null</span>) <span class="keyword">return</span> head;</span><br><span class="line">    <span class="comment">//定义两个指针</span></span><br><span class="line">    LNode slow,fast;</span><br><span class="line">    slow=fast=head.next;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="comment">//求出第fast指向的节点</span></span><br><span class="line">    <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt;k&amp;&amp;fast!=<span class="keyword">null</span> ; i++) &#123;</span><br><span class="line">        fast=fast.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (i&lt;k)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (fast!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        slow=slow.next;</span><br><span class="line">        fast=fast.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> slow;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>打印鏈表</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//打印链表</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">PrintList</span><span class="params">(LNode head)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (LNode cur = head.next; cur !=<span class="keyword">null</span> ; cur=cur.next) &#123;</span><br><span class="line">        System.out.print(cur.data+<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>初始化链表调用函数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">LNode head=<span class="keyword">new</span> LNode();</span><br><span class="line">head.next=<span class="keyword">null</span>;</span><br><span class="line">LNode temp=<span class="keyword">null</span>;</span><br><span class="line">LNode cur=head;</span><br><span class="line"><span class="keyword">for</span> (; i &lt;<span class="number">8</span> ; i++) &#123;</span><br><span class="line">    temp=<span class="keyword">new</span> LNode();</span><br><span class="line">    temp.data=i;</span><br><span class="line">    temp.next=<span class="keyword">null</span>;</span><br><span class="line">    cur.next=temp;</span><br><span class="line">    cur=temp;</span><br><span class="line">&#125;</span><br><span class="line">System.out.print(<span class="string">"链表 :"</span>);</span><br><span class="line">PrintList(head);</span><br><span class="line">LNode lastkNode = findLastkNode(head, <span class="number">3</span>);</span><br><span class="line">System.out.println(<span class="string">"\n第3个节点为 "</span>+lastkNode.data);</span><br></pre></td></tr></table></figure>
+
+<h1 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h1><p><img src="C:%5CUsers%5CAdministrator%5CDesktop%5C%E5%9B%BE%E7%89%87%5CTIM%E6%88%AA%E5%9B%BE20190718194036.png" alt="结果"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/tengcent.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/18/找出单链表中的倒数第k个数/" class="archive-article-date">
-  	<time datetime="2019-07-18T11:43:17.562Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/18/找出单链表中的倒数第k个数/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/17/计算两个单链表所代表的数之和/" class="archive-article-date">
-  	<time datetime="2019-07-17T12:29:49.529Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/17/计算两个单链表所代表的数之和/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">计算两个单链表所代表的数之和</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/17/计算两个单链表所代表的数之和/">计算两个单链表所代表的数之和</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-找出单链表中的倒数第k个数"><span class="toc-number">1.</span> <span class="toc-text">title: 找出单链表中的倒数第k个数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目："><span class="toc-number"></span> <span class="toc-text">题目：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解题思路："><span class="toc-number"></span> <span class="toc-text">解题思路：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路1：二次遍历求解"><span class="toc-number">1.</span> <span class="toc-text">思路1：二次遍历求解</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码实现："><span class="toc-number"></span> <span class="toc-text">代码实现：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路1：快慢指针法"><span class="toc-number">1.</span> <span class="toc-text">思路1：快慢指针法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码实现：-1"><span class="toc-number"></span> <span class="toc-text">代码实现：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#結果"><span class="toc-number"></span> <span class="toc-text">結果</span></a>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/16/无序链表删除重复项/" class="archive-article-date">
-  	<time datetime="2019-07-16T12:03:45.565Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/16/无序链表删除重复项/">无序链表删除重复项</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/hexo搭建个人博客/" class="archive-article-date">
-  	<time datetime="2019-07-15T03:23:20.939Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/hexo搭建个人博客/">搭建个人博客详细步骤</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/链表逆序/" class="archive-article-date">
-  	<time datetime="2019-07-15T03:20:38.250Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/链表逆序/">链表逆序</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/14/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-14T03:12:54.762Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -351,8 +359,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
