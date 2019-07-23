@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/7 | Helloworld</title>
+  <title>Helloworld</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="title: 无序数组找出数组中的最大和最小值无序数组找出数组中的最大和最小值">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Helloworld">
-<meta property="og:url" content="http://yoursite.com/archives/2019/07/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/07/23/无序数组找出数组中的最大和最小值/index.html">
 <meta property="og:site_name" content="Helloworld">
+<meta property="og:description" content="title: 无序数组找出数组中的最大和最小值无序数组找出数组中的最大和最小值">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-23T11:46:25.614Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Helloworld">
+<meta name="twitter:description" content="title: 无序数组找出数组中的最大和最小值无序数组找出数组中的最大和最小值">
   
     <link rel="alternative" href="/atom.xml" title="Helloworld" type="application/atom+xml">
   
@@ -150,253 +154,201 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-无序数组找出数组中的最大和最小值" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="title-无序数组找出数组中的最大和最小值"><a href="#title-无序数组找出数组中的最大和最小值" class="headerlink" title="title: 无序数组找出数组中的最大和最小值"></a>title: 无序数组找出数组中的最大和最小值</h2><h1 id="无序数组找出数组中的最大和最小值"><a href="#无序数组找出数组中的最大和最小值" class="headerlink" title="无序数组找出数组中的最大和最小值"></a>无序数组找出数组中的最大和最小值</h1><a id="more"></a>
+
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给定一个无序数组找出数组中的最大和最小值</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h2 id="方法1：蛮力法"><a href="#方法1：蛮力法" class="headerlink" title="方法1：蛮力法"></a>方法1：蛮力法</h2><p>定义两个遍历保存最大和最小值max,min初始值为数组的第一个元素然后从1开始遍历查找;</p>
+<h2 id="下面就看代码实现："><a href="#下面就看代码实现：" class="headerlink" title="下面就看代码实现："></a>下面就看代码实现：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> [] findArrMinAndMax(<span class="keyword">int</span>[] arr)&#123;</span><br><span class="line">        <span class="keyword">if</span> (arr.length==<span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">if</span> (arr.length==<span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;arr[<span class="number">0</span>],arr[<span class="number">0</span>]&#125;;</span><br><span class="line">        <span class="keyword">int</span> min=arr[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> max=arr[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;arr.length ; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i]&gt;max)&#123;</span><br><span class="line">                max=arr[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (arr[i]&lt;min)&#123;</span><br><span class="line">                min=arr[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;max,min&#125;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int[] max = findArrMinAndMax(new int[]&#123;3,7,19,40,7,4,1&#125;);</span><br><span class="line">System.out.print(&quot;数组的最大值为:&quot;+max[0]);</span><br><span class="line">System.out.print(&quot;\n数组的最小值为:&quot;+max[1]);</span><br></pre></td></tr></table></figure>
+
+<h2 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">数组的最大值为:40</span><br><span class="line">数组的最小值为:1</span><br><span class="line">Process finished with exit code 0</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法2：分组法"><a href="#方法2：分组法" class="headerlink" title="方法2：分组法"></a>方法2：分组法</h2><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; 两两一组分组例&#123;3,7,19,40,7,4&#125;把小的数放在左边大的放在右边为 &#123;3，7，19，40，4，7&#125;遍历数组在&#123;3，19，4&#125;中找出最小值&#123;7，40，7&#125;找出最大值注意数组为奇数是需要再次比较最大值和最小值</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="下面就看代码实现：-1"><a href="#下面就看代码实现：-1" class="headerlink" title="下面就看代码实现："></a>下面就看代码实现：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> [] findArrMinAndMax(<span class="keyword">int</span>[] arr)&#123;</span><br><span class="line">       <span class="keyword">if</span> (arr.length==<span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">       <span class="keyword">if</span> (arr.length==<span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;arr[<span class="number">0</span>],arr[<span class="number">0</span>]&#125;;</span><br><span class="line">       <span class="keyword">int</span> min=arr[<span class="number">0</span>];</span><br><span class="line">       <span class="keyword">int</span> max=arr[<span class="number">0</span>];</span><br><span class="line">       <span class="keyword">int</span> len=arr.length;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;len-<span class="number">1</span> ; i+=<span class="number">2</span>) &#123;</span><br><span class="line">           <span class="keyword">if</span> (arr[i]&gt;arr[i+<span class="number">1</span>])&#123;</span><br><span class="line">               <span class="keyword">int</span> temp=arr[i];</span><br><span class="line">               arr[i]=arr[i+<span class="number">1</span>];</span><br><span class="line">               arr[i+<span class="number">1</span>]=temp;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//遍历奇数下标的</span></span><br><span class="line">       min=arr[<span class="number">0</span>];</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; len; i+=<span class="number">2</span>) &#123;</span><br><span class="line">           <span class="keyword">if</span> (min&gt;arr[i])&#123;</span><br><span class="line">               min=arr[i];</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//遍历偶数下标的</span></span><br><span class="line">       max=arr[<span class="number">1</span>];</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>; i &lt; len; i+=<span class="number">2</span>) &#123;</span><br><span class="line">           <span class="keyword">if</span> (max&lt;arr[i])&#123;</span><br><span class="line">               max=arr[i];</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//如果数组的长度为奇数需要比较最后的大小</span></span><br><span class="line">       <span class="keyword">if</span> (len%<span class="number">2</span>==<span class="number">1</span>)&#123;</span><br><span class="line">           <span class="keyword">if</span> (max&lt;arr[len-<span class="number">1</span>])&#123;</span><br><span class="line">               max=arr[len-<span class="number">1</span>];</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">if</span> (min&gt;arr[len-<span class="number">1</span>])&#123;</span><br><span class="line">               min=arr[len-<span class="number">1</span>];</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;max,min&#125;;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int[] max = findArrMinAndMax(new int[]&#123;3,7,19,40,7,4,1&#125;);</span><br><span class="line">System.out.print(&quot;数组的最大值为:&quot;+max[0]);</span><br><span class="line">System.out.print(&quot;\n数组的最小值为:&quot;+max[1]);</span><br></pre></td></tr></table></figure>
+
+<h2 id="结果：-1"><a href="#结果：-1" class="headerlink" title="结果："></a>结果：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">数组的最大值为:40</span><br><span class="line">数组的最小值为:1</span><br><span class="line">Process finished with exit code 0</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法1：分治法"><a href="#方法1：分治法" class="headerlink" title="方法1：分治法"></a>方法1：分治法</h2><p>把大数组一值拆分为直到子数组中只存在一个或者两个数的时候就是递归的出口;</p>
+<h2 id="下面就看代码实现：-2"><a href="#下面就看代码实现：-2" class="headerlink" title="下面就看代码实现："></a>下面就看代码实现：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Integer&gt; <span class="title">findArrMinAndMax</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> f, <span class="keyword">int</span> l)</span></span>&#123;</span><br><span class="line">       <span class="keyword">int</span> min;</span><br><span class="line">       <span class="keyword">int</span> max;</span><br><span class="line">       <span class="comment">//把数组拆分成子数组</span></span><br><span class="line">       <span class="keyword">int</span> m=(f+l)/<span class="number">2</span>;</span><br><span class="line">       <span class="comment">//用来保存子数组的最大值和最小值</span></span><br><span class="line">       ArrayList&lt;Integer&gt; list=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">       <span class="comment">//数组中只包含一个数</span></span><br><span class="line">       <span class="keyword">if</span> (f==l)&#123;</span><br><span class="line">           list.add(arr[f]);</span><br><span class="line">           list.add(arr[f]);</span><br><span class="line">           <span class="keyword">return</span> list;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//数组中只包含两个数</span></span><br><span class="line">       <span class="keyword">if</span> (f+<span class="number">1</span>==l)&#123;</span><br><span class="line">           <span class="keyword">if</span> (arr[f]&gt;=arr[l])&#123;</span><br><span class="line">               max=arr[f];</span><br><span class="line">               min=arr[l];</span><br><span class="line">           &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">               max=arr[l];</span><br><span class="line">               min=arr[f];</span><br><span class="line">           &#125;</span><br><span class="line">           list.add(min);</span><br><span class="line">           list.add(max);</span><br><span class="line">           <span class="keyword">return</span> list;</span><br><span class="line">       &#125;</span><br><span class="line">       List&lt;Integer&gt; llist = findArrMinAndMax(arr, <span class="number">1</span>, m);</span><br><span class="line">       List&lt;Integer&gt; rlist = findArrMinAndMax(arr, m + <span class="number">1</span>, l);</span><br><span class="line">       max=(llist.get(<span class="number">1</span>)&gt;rlist.get(<span class="number">1</span>))? llist.get(<span class="number">1</span>):rlist.get(<span class="number">1</span>);</span><br><span class="line">       min=(llist.get(<span class="number">0</span>)&lt;rlist.get(<span class="number">0</span>)) ? llist.get(<span class="number">0</span>):rlist.get(<span class="number">0</span>);</span><br><span class="line">       list.add(min);</span><br><span class="line">       list.add(max);</span><br><span class="line">       <span class="keyword">return</span> list;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> List&lt;Integer&gt; list = findArrMinAndMax2(new int[]&#123;3, 7, 19, 40, 7, 4, 1&#125;, 0, new int[]&#123;3, 7, 19, 40, 7, 4, 1&#125;.length - 1);</span><br><span class="line">System.out.print(&quot;\n数组的最大值为:&quot;+list.get(1));</span><br><span class="line">System.out.print(&quot;\n数组的最小值为:&quot;+list.get(0));</span><br></pre></td></tr></table></figure>
+
+<h2 id="结果：-2"><a href="#结果：-2" class="headerlink" title="结果："></a>结果：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">数组的最大值为:40</span><br><span class="line">数组的最小值为:1</span><br><span class="line">Process finished with exit code 0</span><br></pre></td></tr></table></figure>
+
+<p>三种方法都可以解决问题时间复杂度更好</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/tengcent.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/23/找出从1~1000中的重复数字只有一个是重复的/" class="archive-article-date">
-  	<time datetime="2019-07-23T11:47:54.859Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/23/无序数组找出数组中的最大和最小值/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/23/在第k个地方翻转链表/" class="archive-article-date">
-  	<time datetime="2019-07-23T11:47:50.398Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/23/无序数组找出数组中的最大和最小值/" class="archive-article-date">
-  	<time datetime="2019-07-23T11:47:36.800Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2019/07/23/在第k个地方翻转链表/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/23/判断链表是否存在环/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/23/判断链表是否存在环/" class="archive-article-date">
-  	<time datetime="2019-07-23T11:47:29.925Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/23/合并两个有序的链表/" class="archive-article-date">
-  	<time datetime="2019-07-23T11:47:19.243Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-无序数组找出数组中的最大和最小值"><span class="toc-number">1.</span> <span class="toc-text">title: 无序数组找出数组中的最大和最小值</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#无序数组找出数组中的最大和最小值"><span class="toc-number"></span> <span class="toc-text">无序数组找出数组中的最大和最小值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目"><span class="toc-number"></span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number"></span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法1：蛮力法"><span class="toc-number">1.</span> <span class="toc-text">方法1：蛮力法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下面就看代码实现："><span class="toc-number">2.</span> <span class="toc-text">下面就看代码实现：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结果："><span class="toc-number">3.</span> <span class="toc-text">结果：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法2：分组法"><span class="toc-number">4.</span> <span class="toc-text">方法2：分组法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下面就看代码实现：-1"><span class="toc-number">5.</span> <span class="toc-text">下面就看代码实现：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结果：-1"><span class="toc-number">6.</span> <span class="toc-text">结果：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法1：分治法"><span class="toc-number">7.</span> <span class="toc-text">方法1：分治法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下面就看代码实现：-2"><span class="toc-number">8.</span> <span class="toc-text">下面就看代码实现：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结果：-2"><span class="toc-number">9.</span> <span class="toc-text">结果：</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/23/给出一组数找出a+b=c+d的组合/" class="archive-article-date">
-  	<time datetime="2019-07-23T11:47:13.394Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/23/不知道前驱的情况下删除某个节点 p/" class="archive-article-date">
-  	<time datetime="2019-07-23T11:47:08.573Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/18/计算两个单链表所代表的数之和/" class="archive-article-date">
-  	<time datetime="2019-07-18T12:04:24.691Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/18/计算两个单链表所代表的数之和/">计算两个单链表所代表的数之和</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/18/找出单链表中的倒数第k个数/" class="archive-article-date">
-  	<time datetime="2019-07-18T12:02:47.014Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/18/找出单链表中的倒数第k个数/">找出单链表中的倒数第k个数</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/16/无序链表删除重复项/" class="archive-article-date">
-  	<time datetime="2019-07-16T12:03:45.565Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/16/无序链表删除重复项/">无序链表删除重复项</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/07/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/07/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -427,8 +379,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

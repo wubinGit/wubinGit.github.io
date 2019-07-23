@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/7 | Helloworld</title>
+  <title>Helloworld</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="title: 给出一组数 找出a+b=c+d的组合给出一组数 找出a+b=c+d的组合">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Helloworld">
-<meta property="og:url" content="http://yoursite.com/archives/2019/07/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/07/23/给出一组数找出a+b=c+d的组合/index.html">
 <meta property="og:site_name" content="Helloworld">
+<meta property="og:description" content="title: 给出一组数 找出a+b=c+d的组合给出一组数 找出a+b=c+d的组合">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-23T07:56:20.939Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Helloworld">
+<meta name="twitter:description" content="title: 给出一组数 找出a+b=c+d的组合给出一组数 找出a+b=c+d的组合">
   
     <link rel="alternative" href="/atom.xml" title="Helloworld" type="application/atom+xml">
   
@@ -150,253 +154,187 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-给出一组数找出a+b=c+d的组合" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="title-给出一组数-找出a-b-c-d的组合"><a href="#title-给出一组数-找出a-b-c-d的组合" class="headerlink" title="title: 给出一组数 找出a+b=c+d的组合"></a>title: 给出一组数 找出a+b=c+d的组合</h2><h1 id="给出一组数-找出a-b-c-d的组合"><a href="#给出一组数-找出a-b-c-d的组合" class="headerlink" title="给出一组数 找出a+b=c+d的组合"></a>给出一组数 找出a+b=c+d的组合</h1><a id="more"></a>
+
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>给出一组数 找出a+b=c+d的组合</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h2 id="方法1：蛮力法实现"><a href="#方法1：蛮力法实现" class="headerlink" title="方法1：蛮力法实现"></a>方法1：蛮力法实现</h2><p>四重遍历法我这里就不展开介绍了时间复杂度为O(N4).</p>
+<h2 id="下面就看代码实现："><a href="#下面就看代码实现：" class="headerlink" title="下面就看代码实现："></a>下面就看代码实现：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getDuplicateNum</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (arr.length==<span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        HashMap&lt;Integer,Integer&gt; map=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;arr.length ; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!map.containsKey(arr[i]))&#123;</span><br><span class="line">                map.put(arr[i],i);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                res=arr[i];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法2：HashMap实现"><a href="#方法2：HashMap实现" class="headerlink" title="方法2：HashMap实现"></a>方法2：HashMap实现</h2><p>定义一个对象记录数对的组合HashMap保存的键为数对的和值为数对的对象</p>
+<h2 id="下面就看代码实现：-1"><a href="#下面就看代码实现：-1" class="headerlink" title="下面就看代码实现："></a>下面就看代码实现：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pair</span></span>&#123;</span><br><span class="line">    <span class="comment">//用来保存数组的下标</span></span><br><span class="line">    <span class="keyword">int</span> first;</span><br><span class="line">    <span class="keyword">int</span> second;</span><br><span class="line">    Pair(<span class="keyword">int</span> first,<span class="keyword">int</span> second)&#123;</span><br><span class="line">        <span class="keyword">this</span>.first=first;</span><br><span class="line">        <span class="keyword">this</span>.second=second;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>HashMap代码实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static void numberPairsTwo(int arr[])&#123;</span><br><span class="line">    HashMap&lt;Integer,Pair&gt; map=new HashMap&lt;Integer, Pair&gt;();</span><br><span class="line">    int n=arr.length;</span><br><span class="line">    for (int i = 0; i &lt;n ; i++) &#123;</span><br><span class="line">        for (int j = i+1; j &lt;n ; j++) &#123;</span><br><span class="line">           int sum=arr[i]+arr[j];</span><br><span class="line">           if (!map.containsKey(sum))&#123;</span><br><span class="line">               map.put(sum,new Pair(i,j));</span><br><span class="line">           &#125;else &#123;</span><br><span class="line">               Pair pair = map.get(sum);</span><br><span class="line">               System.out.println(&quot;(&quot;+arr[pair.first]+&quot;,&quot;+arr[pair.second]+&quot;)&quot;+&quot;,&quot;+&quot;(&quot;+arr[i]+&quot;,&quot;+arr[j]+&quot;)&quot;);</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">    numberPairsTwo(new int[]&#123;3,4,7,10,20,9,8&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h2><p>(3,8),(4,7)<br>(3,10),(4,9)<br>(3,9),(4,8)<br>(7,10),(9,8)</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/tengcent.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/23/找出从1~1000中的重复数字只有一个是重复的/" class="archive-article-date">
-  	<time datetime="2019-07-23T11:47:54.859Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/23/给出一组数找出a+b=c+d的组合/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/23/在第k个地方翻转链表/" class="archive-article-date">
-  	<time datetime="2019-07-23T11:47:50.398Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/23/无序数组找出数组中的最大和最小值/" class="archive-article-date">
-  	<time datetime="2019-07-23T11:47:36.800Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2019/07/23/合并两个有序的链表/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/23/不知道前驱的情况下删除某个节点 p/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/23/判断链表是否存在环/" class="archive-article-date">
-  	<time datetime="2019-07-23T11:47:29.925Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/23/合并两个有序的链表/" class="archive-article-date">
-  	<time datetime="2019-07-23T11:47:19.243Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-给出一组数-找出a-b-c-d的组合"><span class="toc-number">1.</span> <span class="toc-text">title: 给出一组数 找出a+b=c+d的组合</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#给出一组数-找出a-b-c-d的组合"><span class="toc-number"></span> <span class="toc-text">给出一组数 找出a+b=c+d的组合</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目"><span class="toc-number"></span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number"></span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法1：蛮力法实现"><span class="toc-number">1.</span> <span class="toc-text">方法1：蛮力法实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下面就看代码实现："><span class="toc-number">2.</span> <span class="toc-text">下面就看代码实现：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法2：HashMap实现"><span class="toc-number">3.</span> <span class="toc-text">方法2：HashMap实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下面就看代码实现：-1"><span class="toc-number">4.</span> <span class="toc-text">下面就看代码实现：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结果："><span class="toc-number">5.</span> <span class="toc-text">结果：</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/23/给出一组数找出a+b=c+d的组合/" class="archive-article-date">
-  	<time datetime="2019-07-23T11:47:13.394Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/23/不知道前驱的情况下删除某个节点 p/" class="archive-article-date">
-  	<time datetime="2019-07-23T11:47:08.573Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/18/计算两个单链表所代表的数之和/" class="archive-article-date">
-  	<time datetime="2019-07-18T12:04:24.691Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/18/计算两个单链表所代表的数之和/">计算两个单链表所代表的数之和</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/18/找出单链表中的倒数第k个数/" class="archive-article-date">
-  	<time datetime="2019-07-18T12:02:47.014Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/18/找出单链表中的倒数第k个数/">找出单链表中的倒数第k个数</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/16/无序链表删除重复项/" class="archive-article-date">
-  	<time datetime="2019-07-16T12:03:45.565Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/16/无序链表删除重复项/">无序链表删除重复项</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/07/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/07/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -427,8 +365,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
