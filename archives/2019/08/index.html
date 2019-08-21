@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Helloworld</title>
+  <title>Archives: 2019/8 | Helloworld</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: 找出从1~1000中的重复数字 只有一个是重复的找出1~1000中的重复数字，其中只有一个是重复的">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="Helloworld">
-<meta property="og:url" content="http://yoursite.com/2019/07/23/找出从1~1000中的重复数字只有一个是重复的/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2019/08/index.html">
 <meta property="og:site_name" content="Helloworld">
-<meta property="og:description" content="title: 找出从1~1000中的重复数字 只有一个是重复的找出1~1000中的重复数字，其中只有一个是重复的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-23T07:23:30.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Helloworld">
-<meta name="twitter:description" content="title: 找出从1~1000中的重复数字 只有一个是重复的找出1~1000中的重复数字，其中只有一个是重复的">
   
     <link rel="alternative" href="/atom.xml" title="Helloworld" type="application/atom+xml">
   
@@ -154,190 +150,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-找出从1~1000中的重复数字只有一个是重复的" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-    <div class="article-entry" itemprop="articleBody">
+    
       
-        <h2 id="title-找出从1-1000中的重复数字-只有一个是重复的"><a href="#title-找出从1-1000中的重复数字-只有一个是重复的" class="headerlink" title="title: 找出从1~1000中的重复数字 只有一个是重复的"></a>title: 找出从1~1000中的重复数字 只有一个是重复的</h2><h1 id="找出1-1000中的重复数字，其中只有一个是重复的"><a href="#找出1-1000中的重复数字，其中只有一个是重复的" class="headerlink" title="找出1~1000中的重复数字，其中只有一个是重复的"></a>找出1~1000中的重复数字，其中只有一个是重复的</h1><a id="more"></a>
-
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>找出1~1000中的重复数字，其中只有一个是重复的</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h2 id="方法1：HashMap实现"><a href="#方法1：HashMap实现" class="headerlink" title="方法1：HashMap实现"></a>方法1：HashMap实现</h2><p>遍历数组把每个数存入到HashMap中ifMap不存在就存入else直接跳出循环时间复杂度为O(N)遍历数组空间复杂度为O(N).</p>
-<h2 id="下面就看代码实现："><a href="#下面就看代码实现：" class="headerlink" title="下面就看代码实现："></a>下面就看代码实现：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getDuplicateNum</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (arr.length==<span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        HashMap&lt;Integer,Integer&gt; map=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;arr.length ; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!map.containsKey(arr[i]))&#123;</span><br><span class="line">                map.put(arr[i],i);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                res=arr[i];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="能不能不申请额外的空间呢？"><a href="#能不能不申请额外的空间呢？" class="headerlink" title="能不能不申请额外的空间呢？"></a>能不能不申请额外的空间呢？</h2><h2 id="方法2：累加求和法"><a href="#方法2：累加求和法" class="headerlink" title="方法2：累加求和法"></a>方法2：累加求和法</h2><p>求出0~1000的和和遍历数组求和之后相减即可求出重复的数字</p>
-<h2 id="下面就看代码实现：-1"><a href="#下面就看代码实现：-1" class="headerlink" title="下面就看代码实现："></a>下面就看代码实现：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public static int getDuplicateNum(int[] arr)&#123;</span><br><span class="line"> 	if (arr.length==0) return -1;</span><br><span class="line">       int sum=0,arrsum=0;</span><br><span class="line">       for (int j=0;j&lt;1000;j++)&#123;</span><br><span class="line">           sum+=j;</span><br><span class="line">       &#125;</span><br><span class="line">       for (int i = 0; i &lt;arr.length ; i++) &#123;</span><br><span class="line">           arrsum+=arr[i];</span><br><span class="line">       &#125;</span><br><span class="line">       return arrsum-sum;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<p>此方法有缺陷就是<strong>如果数组的和超出了int的范围就不适合了</strong>有没有更适合的方法呢？</p>
-<h2 id="方法3：或异法"><a href="#方法3：或异法" class="headerlink" title="方法3：或异法"></a>方法3：或异法</h2><p>因为<strong>1^1=0</strong>所有我们想到了或异法求解第一步先遍历0~1000的数然后用或异求和然后遍历数组同样或异求和</p>
-<p>举个例子以<strong>{1，3，4，2，5，3}</strong>数组为例<strong>（1^3^4^2^5^3）^（1^2^3^4^5）=3</strong>即3为重复的数字</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public static int getDuplicateNum(int[] arr)&#123;</span><br><span class="line">      if (arr.length==0) return -1;</span><br><span class="line">      int result=0;</span><br><span class="line">      for (int i = 0; i &lt;arr.length ; i++) &#123;</span><br><span class="line">          result ^=arr[i];</span><br><span class="line">      &#125;</span><br><span class="line">      for (int i = 1; i &lt;arr.length ; i++) &#123;</span><br><span class="line">          result ^=i;</span><br><span class="line">      &#125;</span><br><span class="line">      return  result;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="测试代码："><a href="#测试代码：" class="headerlink" title="测试代码："></a>测试代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">    int[] arr=new int[1001];</span><br><span class="line">    for (int i = 0; i &lt;1000 ; i++) &#123;</span><br><span class="line">        arr[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    arr[1000]=6;</span><br><span class="line">    int num = getDuplicateNum(arr);</span><br><span class="line">    System.out.println(&quot;重复数字为:&quot;+num);</span><br><span class="line">    int num1 = getDuplicateNum2(new int[]&#123;1,2,3,4,5,6,7,3&#125;);</span><br><span class="line">    System.out.println(&quot;重复数字为:&quot;+num1);</span><br><span class="line">    int num2 = getDuplicateNum1(arr);</span><br><span class="line">    System.out.println(&quot;重复数字为:&quot;+num2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Files\Java\jdk1.8.0_74\jre\lib\rt.jar;E:\workspace\JavaAlgorithmInterview\out\production\JavaAlgorithmInterview<span class="string">" </span></span><br><span class="line"><span class="string">重复数字为:6</span></span><br><span class="line"><span class="string">重复数字为:3</span></span><br><span class="line"><span class="string">重复数字为:6</span></span><br></pre></td></tr></table></figure>
-
-
       
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/alipay.png">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/tengcent.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/08/21/笔记/" class="archive-article-date">
+  	<time datetime="2019-08-21T10:42:13.142Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
+</a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
+    	 
+        <div class="article-info info-on-right">
+          
+          
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/23/找出从1~1000中的重复数字只有一个是重复的/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/08/21/笔记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/07/23/在第k个地方翻转链表/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-找出从1-1000中的重复数字-只有一个是重复的"><span class="toc-number">1.</span> <span class="toc-text">title: 找出从1~1000中的重复数字 只有一个是重复的</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#找出1-1000中的重复数字，其中只有一个是重复的"><span class="toc-number"></span> <span class="toc-text">找出1~1000中的重复数字，其中只有一个是重复的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目"><span class="toc-number"></span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number"></span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法1：HashMap实现"><span class="toc-number">1.</span> <span class="toc-text">方法1：HashMap实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下面就看代码实现："><span class="toc-number">2.</span> <span class="toc-text">下面就看代码实现：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#能不能不申请额外的空间呢？"><span class="toc-number">3.</span> <span class="toc-text">能不能不申请额外的空间呢？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法2：累加求和法"><span class="toc-number">4.</span> <span class="toc-text">方法2：累加求和法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下面就看代码实现：-1"><span class="toc-number">5.</span> <span class="toc-text">下面就看代码实现：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法3：或异法"><span class="toc-number">6.</span> <span class="toc-text">方法3：或异法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试代码："><span class="toc-number">7.</span> <span class="toc-text">测试代码：</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -367,8 +216,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
