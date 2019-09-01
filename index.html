@@ -157,44 +157,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一棵完全二叉树的节点总数"><a href="#一棵完全二叉树的节点总数" class="headerlink" title="一棵完全二叉树的节点总数"></a>一棵完全二叉树的节点总数</h1><p>题意：已知一棵完全二叉树，求其节点的个数<br>要求：时间复杂度低于O(N)，N为这棵树的节点个数。<br><strong>公式节点个数=2^n-1</strong></p>
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>如果是一个完全二叉树最左边一定有节点求出二叉树的高度H</p>
-<pre><code>public static int mostLeftLevel(Node node, int level) {
-        while (node != null) {
-            level++;
-            node = node.left;
-        }
-        return level - 1;
-    }</code></pre><p>再求出二叉树的右节点的最左边的节点是否等于二叉树的高度H<br>if==H说明至少二叉树的左子树是一棵满二叉树 else 右子树是一颗满二叉树。<br>具体代码如下：</p>
-<pre><code>public static class Node {
-        public int value;
-        public Node left;
-        public Node right;
-
-        public Node(int data) {
-            this.value = data;
-        }
-    }
-
-    public static int nodeNum(Node head) {
-        if (head == null) {
-            return 0;
-        }
-        return bs(head, 1, mostLeftLevel(head, 1));
-    }
-
-    public static int bs(Node node, int leval, int h) {
-        if (leval == h) {
-            return 1;
-        }
-        if (mostLeftLevel(node.right, leval + 1) == h) {
-        //左子树是一棵满二叉树
-            return (1 &lt;&lt; (h - leval)) + bs(node.right, leval + 1, h);
-        } else {
-        //右子树是一颗满二叉树高度比树的高度减1
-            return (1 &lt;&lt; (h - leval - 1)) + bs(node.left, leval + 1, h);
-        }
-    }</code></pre>
+        <h2 id="title-一棵完全二叉树的节点总数"><a href="#title-一棵完全二叉树的节点总数" class="headerlink" title="title: 一棵完全二叉树的节点总数"></a>title: 一棵完全二叉树的节点总数</h2><h1 id="已知一棵完全二叉树，求其节点的个数"><a href="#已知一棵完全二叉树，求其节点的个数" class="headerlink" title="已知一棵完全二叉树，求其节点的个数"></a>已知一棵完全二叉树，求其节点的个数</h1><p>要求：时间复杂度低于O(N)，N为这棵树的节点个数</p>
+        
+          <a class="article-more-a" href="/2019/09/01/一棵完全二叉树的节点总数/#more">more >></a>
+        
       
 
       
