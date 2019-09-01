@@ -152,6 +152,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-一棵完全二叉树的节点总数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一棵完全二叉树的节点总数"><a href="#一棵完全二叉树的节点总数" class="headerlink" title="一棵完全二叉树的节点总数"></a>一棵完全二叉树的节点总数</h1><p>题意：已知一棵完全二叉树，求其节点的个数<br>要求：时间复杂度低于O(N)，N为这棵树的节点个数。<br><strong>公式节点个数=2^n-1</strong></p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>如果是一个完全二叉树最左边一定有节点求出二叉树的高度H</p>
+<pre><code>public static int mostLeftLevel(Node node, int level) {
+        while (node != null) {
+            level++;
+            node = node.left;
+        }
+        return level - 1;
+    }</code></pre><p>再求出二叉树的右节点的最左边的节点是否等于二叉树的高度H<br>if==H说明至少二叉树的左子树是一棵满二叉树 else 右子树是一颗满二叉树。<br>具体代码如下：</p>
+<pre><code>public static class Node {
+        public int value;
+        public Node left;
+        public Node right;
+
+        public Node(int data) {
+            this.value = data;
+        }
+    }
+
+    public static int nodeNum(Node head) {
+        if (head == null) {
+            return 0;
+        }
+        return bs(head, 1, mostLeftLevel(head, 1));
+    }
+
+    public static int bs(Node node, int leval, int h) {
+        if (leval == h) {
+            return 1;
+        }
+        if (mostLeftLevel(node.right, leval + 1) == h) {
+        //左子树是一棵满二叉树
+            return (1 &lt;&lt; (h - leval)) + bs(node.right, leval + 1, h);
+        } else {
+        //右子树是一颗满二叉树高度比树的高度减1
+            return (1 &lt;&lt; (h - leval - 1)) + bs(node.left, leval + 1, h);
+        }
+    }</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/01/一棵完全二叉树的节点总数/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -604,72 +688,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/07/18/计算两个单链表所代表的数之和/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-找出单链表中的倒数第k个数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/18/找出单链表中的倒数第k个数/">找出单链表中的倒数第k个数</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/18/找出单链表中的倒数第k个数/" class="archive-article-date">
-  	<time datetime="2019-07-18T12:02:47.014Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
-</a>
-		
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="找出单链表中的倒数第k个数"><a href="#找出单链表中的倒数第k个数" class="headerlink" title="找出单链表中的倒数第k个数"></a>找出单链表中的倒数第k个数</h2>
-        
-          <a class="article-more-a" href="/2019/07/18/找出单链表中的倒数第k个数/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/18/找出单链表中的倒数第k个数/">展开全文 >></a>
         </p>
       
 
